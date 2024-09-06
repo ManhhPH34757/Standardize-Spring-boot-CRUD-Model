@@ -1,1 +1,16 @@
-spring.application.name=Spring-Security
+server:
+  port: 8080
+  servlet:
+    context-path: /identity
+spring:
+  application:
+    name: Spring-Security
+  datasource:
+    url: jdbc:mariadb://localhost:3306/spring_security
+    username: root
+    password: 142857
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: true
