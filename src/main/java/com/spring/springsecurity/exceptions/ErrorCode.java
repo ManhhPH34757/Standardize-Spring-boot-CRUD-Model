@@ -12,6 +12,7 @@ public enum ErrorCode {
     UNCATEGORIZED_EXCEPTION(9999, "Uncategorized error"),
     INVALID_KEY(1001, "Invalid message key"),
     USER_EXISTED(1002, "User exists"),
+    USER_NOT_EXISTED(1004, "User not exists"),
     PASSWORD_INVALID(1003, "Password must be at least 8 characters")
     ;
 

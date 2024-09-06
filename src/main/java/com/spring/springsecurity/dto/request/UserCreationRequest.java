@@ -1,6 +1,5 @@
 package com.spring.springsecurity.dto.request;
 
-import com.spring.springsecurity.exceptions.ErrorCode;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
