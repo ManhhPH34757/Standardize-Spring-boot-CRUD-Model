@@ -6,16 +6,19 @@ import com.spring.springsecurity.dto.response.ApiResponse;
 import com.spring.springsecurity.dto.response.UserResponse;
 import com.spring.springsecurity.entities.User;
 import com.spring.springsecurity.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AccessLevel;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.FieldDefaults;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    UserService userService;
 
     @PostMapping()
     public ApiResponse<User> createUser(@RequestBody @Validated UserCreationRequest userCreationRequest) {
