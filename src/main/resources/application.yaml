@@ -14,3 +14,5 @@ spring:
       ddl-auto: update
     show-sql: true
     open-in-view: true
+jwt:
+  secretKey: "8fNmI9VGUzI2amLD4sBEQkGi6Lry0HBaQ0QmLGPMPICM2ot4HUrZxhK/xX/nm4/1"
