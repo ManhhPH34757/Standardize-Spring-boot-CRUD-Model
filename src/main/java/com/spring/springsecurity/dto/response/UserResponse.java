@@ -1,23 +1,28 @@
 package com.spring.springsecurity.dto.response;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserResponse {
-    private String id;
+    String id;
 
-    private String email;
+    String email;
 
-    private String password;
+    String firstName;
 
-    private String firstName;
+    String lastName;
 
-    private String lastName;
+    LocalDate dob;
 
-    private LocalDate dob;
+    Set<String> roles;
 
 }

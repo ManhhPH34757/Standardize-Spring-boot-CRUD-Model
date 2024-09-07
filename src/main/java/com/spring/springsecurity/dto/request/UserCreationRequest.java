@@ -12,7 +12,7 @@ public class UserCreationRequest {
 
     private String email;
 
-    @Size(min = 8, message = "PASSWORD_INVALID")
+    @Size(min = 6, message = "PASSWORD_INVALID")
     private String password;
 
     private String firstName;

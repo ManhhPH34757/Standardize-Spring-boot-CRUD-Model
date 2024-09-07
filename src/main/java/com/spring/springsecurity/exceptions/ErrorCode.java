@@ -13,7 +13,7 @@ public enum ErrorCode {
     INVALID_KEY(1001, "Invalid message key"),
     USER_EXISTED(1002, "User exists"),
     USER_NOT_EXISTED(1004, "User not exists"),
-    PASSWORD_INVALID(1003, "Password must be at least 8 characters"),
+    PASSWORD_INVALID(1003, "Password must be at least 6 characters"),
     UNAUTHENTICATED(1005, "Unauthenticated")
     ;
 
