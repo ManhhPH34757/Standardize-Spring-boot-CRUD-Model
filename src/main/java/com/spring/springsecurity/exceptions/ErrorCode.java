@@ -14,7 +14,8 @@ public enum ErrorCode {
     USER_EXISTED(1002, "User exists"),
     USER_NOT_EXISTED(1004, "User not exists"),
     PASSWORD_INVALID(1003, "Password must be at least 6 characters"),
-    UNAUTHENTICATED(1005, "Unauthenticated")
+    UNAUTHENTICATED(1005, "Unauthenticated"),
+    PRODUCT_NOT_EXIST(1006, "Product not exists")
     ;
 
     private Integer code;

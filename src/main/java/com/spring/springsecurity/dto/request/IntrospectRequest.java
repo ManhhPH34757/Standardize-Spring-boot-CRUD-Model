@@ -13,5 +13,4 @@ import lombok.experimental.FieldDefaults;
 public class IntrospectRequest {
     String token;
     Boolean authenticated;
-
 }
