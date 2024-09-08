@@ -10,10 +10,7 @@ import com.spring.springsecurity.services.AuthenticationService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 
@@ -25,7 +22,7 @@ public class AuthenticationController {
     AuthenticationService authenticationService;
 
     @PostMapping("/token")
-    public ApiResponse<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request){
+    public ApiResponse<AuthenticationResponse> authenticateUser(@RequestBody AuthenticationRequest request){
         var result = authenticationService.authenticated(request);
 
         return ApiResponse.<AuthenticationResponse>builder()
@@ -34,7 +31,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/introspect")
-    public ApiResponse<IntrospectResponse> authenticate(@RequestBody IntrospectRequest request) throws ParseException, JOSEException {
+    public ApiResponse<IntrospectResponse> introspectToken(@RequestBody IntrospectRequest request) throws ParseException, JOSEException {
         var result = authenticationService.introspectResponse(request);
 
         return ApiResponse.<IntrospectResponse>builder()

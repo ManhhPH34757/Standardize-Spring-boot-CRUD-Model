@@ -48,7 +48,6 @@ public class UserService {
         return userMapper.toUserResponse(userRepository.save(user));
     }
 
-    @PreAuthorize(value = "hasRole('ADMIN') or hasRole('USER')")
     public List<UserResponse> getAllUsers() {
         log.info("In method get users");
         List<UserResponse> users = new ArrayList<>();
