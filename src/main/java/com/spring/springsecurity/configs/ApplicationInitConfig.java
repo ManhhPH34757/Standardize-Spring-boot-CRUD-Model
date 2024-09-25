@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 
 @Configuration
@@ -20,24 +21,27 @@ import java.util.HashSet;
 @Slf4j
 public class ApplicationInitConfig {
 
-    PasswordEncoder passwordEncoder;
+     PasswordEncoder passwordEncoder;
 
-    @Bean
-    ApplicationRunner applicationRunner(UserRepository userRepository) {
-        return args -> {
-          if (userRepository.findByEmail("admin@spring.security.com").isEmpty()){
-              var roles = new HashSet<String>();
-              roles.add(Role.ADMIN.name());
-              User user = User.builder()
-                      .email("admin@spring.security.com")
-                      .password(passwordEncoder.encode("123456"))
-                      .roles(roles)
-                      .build();
+     @Bean
+     ApplicationRunner applicationRunner(UserRepository userRepository) {
+          return args -> {
+               if (userRepository.findByEmail("admin@spring.security.com").isEmpty()) {
+                    var roles = new HashSet<String>();
+                    roles.add(Role.ADMIN.name());
+                    User user = User.builder()
+                         .email("admin@spring.security.com")
+                         .password(passwordEncoder.encode("123456"))
+                         .firstName("Manh")
+                         .lastName("Nguyen")
+                         .dob(LocalDate.of(2004, 7, 27))
+                         .roles(roles)
+                         .build();
 
-              userRepository.save(user);
-              log.warn("Admin created! Password default: 123456, please change it!");
-          }
-        };
+                    userRepository.save(user);
+                    log.info("Admin created! Password default: 123456, please change it!");
+               }
+          };
 
-    }
+     }
 }
